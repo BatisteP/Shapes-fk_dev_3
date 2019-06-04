@@ -48,7 +48,7 @@ public class Editor extends JFrame
 		
 		this.buildModel();
 		this.sview = new ShapesView(this.model);
-		this.sview.setPreferredSize(new Dimension(300,300));
+		this.sview.setPreferredSize(new Dimension(1000,1000));
 		this.getContentPane().add(this.sview, java.awt.BorderLayout.CENTER);
 	}
 
@@ -75,7 +75,7 @@ public class Editor extends JFrame
 		this.model.add(c);
 		c.addAttributes(new ColorAttributes(true,false,Color.RED,Color.BLACK));
 				
-		SText t= new SText(new Point(100,80),"Ã‰Typihfqhfljqgfkqsgfhkqgfhkqgfkq");
+		SText t= new SText(new Point(100,80),"EéTypihfqhfljqgfkqsgfhkqgfhkqgfkq");
 		t.addAttributes(new ColorAttributes(true,false,Color.YELLOW,Color.BLUE));
 		t.addAttributes(new FontAttributes());
 		t.addAttributes(new SelectionAttributes());
@@ -117,8 +117,7 @@ public class Editor extends JFrame
 		p.addAttributes(new ResizeAttributes());
 		p.addAttributes(new ColorAttributes());
 		this.model.add(p);
-		//image path may be src/img/java.jpg (perhaps inch' Hallah)
-		SImage i = new SImage("rsc/img/java.jpg", new Point(0,0));
+		SImage i = new SImage("rsc/img/java.jpg",new Point(0,0),150,100);
 		i.addAttributes(new SelectionAttributes());
 		i.addAttributes(new ResizeAttributes());
 		i.addAttributes(new RotationAttributes());

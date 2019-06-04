@@ -51,7 +51,7 @@ public class ShapeController extends Controller{
 		super(model);
 		this.setView(view);
 		this.state = 1;
-		descriptor=new ShapeDescriptor();
+		descriptor = new ShapeDescriptor();
 		this.clipboard = new SCollection();
 	}
 	

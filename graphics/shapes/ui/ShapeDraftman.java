@@ -74,7 +74,7 @@ public class ShapeDraftman implements ShapeVisitor {
 			this.g.setColor(ca.strokedColor());
 		}
 		//begin DEBUG
-		this.g.drawOval(center.x-2, center.y-2, 4, 4);
+		//this.g.drawOval(center.x-2, center.y-2, 4, 4);
 		//end DEBUG
 		this.g.draw(rect.getRect());
 		this.drawSelection(rect);

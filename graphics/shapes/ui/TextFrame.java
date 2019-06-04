@@ -7,68 +7,91 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.PrintStream;
-import java.util.Date;
+
  
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-import javax.swing.text.BadLocationException;
+
  
 public class TextFrame extends JFrame {
     /**
      * The text area which is used for displaying Shape description
      */
     private JTextArea textArea;
-    private ShapeDescriptor desc;
+    
   
     private JButton buttonClear = new JButton("Clear");
+    private JButton buttonEdit = new JButton("Edit");
     public TextFrame() {
         super("Shape description Area");
-       // this.desc = desc;
         textArea = new JTextArea(50, 10);
         textArea.setEditable(false);
         PrintStream printStream = new PrintStream(new CustomOutputStream(textArea));       
-      
         System.setOut(printStream);
-       System.setErr(printStream);
- 
-        // creates the GUI
-        //cf. https://docs.oracle.com/javase/7/docs/api/java/awt/GridBagConstraints.html
+        System.setErr(printStream);
+       
+        //setting up buttons layout using GridBagLayout
+        //cf. https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html
         setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-     
-        constraints.gridy = 0;
-    	
-        add(buttonClear,constraints);
-        //selects the 2nd cell vertically cf. https://docs.oracle.com/javase/7/docs/api/java/awt/GridBagConstraints.html
-        constraints.gridy = 1;
-        constraints.fill = GridBagConstraints.BOTH;
-        //distributes vertical and horizontal space
-       	constraints.weightx = 1.0;
-        constraints.weighty = 1.0;
+        GridBagConstraints c = new GridBagConstraints();
+        //external-padding
+       
+        c.ipadx=10;
        
        
-        add(new JScrollPane(textArea),constraints);
-         
+        //Clear Button on first cell 
+        c.gridx=0;
+        c.gridy = 0;
+        add(buttonClear,c);
+        c.anchor = GridBagConstraints.PAGE_END; 
+        c.gridy=2;
+        c.gridx=0;
+        add(buttonEdit,c);
+      
+        //JTextArea on 2nd cell vertically takes all remaining space
+        //external padding
+        c.insets = new Insets(5,5,5,5);
+        c.gridx=0;
+        c.gridy = 1;
+        c.fill = GridBagConstraints.BOTH; 
+        c.weightx = 1.0;
+        c.weighty = 1.0;
+       
+       
+        add(new JScrollPane(textArea),c);
+        
      
-        // clears the text area
+        //clears the text area
         buttonClear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                
                 try {
                     textArea.getDocument().remove(0,
                             textArea.getDocument().getLength());
-                } catch (BadLocationException ex) {
+                } 
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        buttonEdit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+               
+                try {
+                    textArea.setEditable(true);
+                } 
+                catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
         });
          
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(480, 320);
-        setLocationRelativeTo(null);    // centers on screen
+        setSize(320, 500);
+       
     }
      
    

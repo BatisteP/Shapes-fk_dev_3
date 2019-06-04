@@ -47,7 +47,10 @@ public class ShapeDescriptor implements ShapeVisitor{
 		if (rot==null) {
 			rot = new RotationAttributes();
 		}
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println("--------------------------------------------------------------------");
 		
 	}
@@ -60,7 +63,7 @@ public class ShapeDescriptor implements ShapeVisitor{
 			ca = DEFAULTCOLORATTRIBUTES;
 		}
 		System.out.println("\tCircle");
-		System.out.println("  position (x,y) = ("+c.getCenter().x+","+c.getCenter().y+") radius= "
+		System.out.println("  position (x,y) = ("+c.getCenter().x+","+c.getCenter().y+") radius="
 				+c.getRadius());
 		if (ca.filled()) {
 			System.out.println("  filled :" +getRGBString(ca.filledColor()));
@@ -71,7 +74,10 @@ public class ShapeDescriptor implements ShapeVisitor{
 		if (rot==null) {
 			rot = new RotationAttributes();
 		}
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println("--------------------------------------------------------------------");
 		
 	}
@@ -101,7 +107,10 @@ public class ShapeDescriptor implements ShapeVisitor{
 		if (rot==null) {
 			rot = new RotationAttributes();
 		}
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println("--------------------------------------------------------------------");
 	}
 	
@@ -123,7 +132,10 @@ public class ShapeDescriptor implements ShapeVisitor{
 		if (rot==null) {
 			rot = new RotationAttributes();
 		}
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println(" Polygon vertices");
 		Polygon polygon = pol.getPolygon();
 		for (int i=0;i<polygon.xpoints.length;i++) {
@@ -137,13 +149,16 @@ public class ShapeDescriptor implements ShapeVisitor{
 	public void visitCollection(SCollection col) {
 		RotationAttributes rot = (RotationAttributes) col.getAttributes(Attributes.RotationID);
 		System.out.println("############Collection############");
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println("  Shapes in collection :");
-		System.out.println("  :");
+		System.out.println("  ");
 		for (Iterator<Shape> it = col.iterator(); it.hasNext();) {
 			it.next().accept(this);
 		}
-		System.out.println("############end of collection############");
+		System.out.println("############End of collection############");
 		
 	}
 	public String getRGBString(Color c) {
@@ -166,7 +181,10 @@ public class ShapeDescriptor implements ShapeVisitor{
 			rot = new RotationAttributes();
 		}
 		System.out.println("  Path: "+i.getUrl());
-		System.out.println("  Rotation : " +rot.getAngle()+" degrees");
+		if (rot.getAngle()<1) {
+			System.out.println("  Rotation : " +rot.getAngle()+" degree");
+		}
+		else System.out.println("  Rotation : " +rot.getAngle()+" degrees");
 		System.out.println("--------------------------------------------------------------------");
 		
 	}
