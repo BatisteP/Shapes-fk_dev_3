@@ -85,7 +85,7 @@ public class RHBottomLeft extends Handle {
 		this.shape.setLoc(loc);
 	}
 
-	public void setLoc(Point p) {
+	/*public void setLoc(Point p) {
 		Point2D loc =  (Point2D) p.clone();
 		RotationAttributes rot = (RotationAttributes)this.master.getAttributes(Attributes.RotationID);
 		if(rot != null && rot.getAngle() != 0) {
@@ -95,7 +95,7 @@ public class RHBottomLeft extends Handle {
 			loc = at.transform(loc, null);
 		}
 		this.modifier(new Point((int)loc.getX(), (int)loc.getY()));
-	}
+	}*/
 
 	@Override
 	public void setWidth(int width) {

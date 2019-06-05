@@ -60,7 +60,7 @@ public class RHBottomRight extends Handle {
 		this.shape.setLoc(loc);
 	}
 	
-	public void setLoc(Point p) {
+	/*public void setLoc(Point p) {
 		//System.out.println("modifier call1");
 		Point2D loc = (Point2D) p.clone();
 		RotationAttributes rot = (RotationAttributes)this.master.getAttributes(Attributes.RotationID);
@@ -74,7 +74,7 @@ public class RHBottomRight extends Handle {
 		//System.out.println("modifier call");
 	}
 
-
+*/
 	@Override
 	public void setWidth(int width) {
 		// TODO Auto-generated method stub

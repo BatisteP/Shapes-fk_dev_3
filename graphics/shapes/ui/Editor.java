@@ -48,7 +48,7 @@ public class Editor extends JFrame
 		
 		this.buildModel();
 		this.sview = new ShapesView(this.model);
-		this.sview.setPreferredSize(new Dimension(1000,1000));
+		this.sview.setPreferredSize(new Dimension(900,700));
 		this.getContentPane().add(this.sview, java.awt.BorderLayout.CENTER);
 	}
 
@@ -67,7 +67,7 @@ public class Editor extends JFrame
 		
 		r.setLoc(new Point(40,40));
 		
-		SCircle c = new SCircle(new Point(50,50),10);
+		SCircle c = new SCircle(new Point(150,100),10);
 		c.addAttributes(new ColorAttributes(true,true,Color.GREEN,Color.GREEN));
 		c.addAttributes(new SelectionAttributes());
 		c.addAttributes(new ResizeAttributes());
@@ -75,7 +75,7 @@ public class Editor extends JFrame
 		this.model.add(c);
 		c.addAttributes(new ColorAttributes(true,false,Color.RED,Color.BLACK));
 				
-		SText t= new SText(new Point(100,80),"EÈTypihfqhfljqgfkqsgfhkqgfhkqgfkq");
+		SText t= new SText(new Point(160,150),"EÈTypihfqhfljqgfkqsgfhkqgfhkqgfkq");
 		t.addAttributes(new ColorAttributes(true,false,Color.YELLOW,Color.BLUE));
 		t.addAttributes(new FontAttributes());
 		t.addAttributes(new SelectionAttributes());
@@ -85,15 +85,15 @@ public class Editor extends JFrame
 		
 		SCollection sc = new SCollection();
 		sc.addAttributes(new SelectionAttributes());
-		r = new SRectangle(new Point(70,90),30,30);
+		r = new SRectangle(new Point(170,140),30,30);
 		r.addAttributes(new ColorAttributes(true,true,Color.MAGENTA,Color.BLUE));
 		r.addAttributes(new SelectionAttributes());
 		sc.add(r);
-		r = new SRectangle(new Point(100,120),31,49);
+		r = new SRectangle(new Point(200,170),31,49);
 		r.addAttributes(new ColorAttributes(false,true,Color.MAGENTA,Color.BLUE));
 		r.addAttributes(new SelectionAttributes());
 		sc.add(r);
-		c = new SCircle(new Point(150,100),20);
+		c = new SCircle(new Point(250,150),20);
 		c.addAttributes(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
 		c.addAttributes(new SelectionAttributes());
 		sc.add(c);
@@ -102,22 +102,22 @@ public class Editor extends JFrame
 		this.model.add(sc);
 		
 		SPolygon p = new SPolygon();
-		p.add(new Point(100,100));
-		p.add(new Point(110,100));
-		p.add(new Point(115,90));
-		p.add(new Point(120,100));
-		p.add(new Point(130,100));
-		p.add(new Point(107,107));
-		p.add(new Point(102,114));
-		p.add(new Point(115,110));
-		p.add(new Point(128,114));
-		p.add(new Point(123,107));
+		p.add(new Point(200,100));
+		p.add(new Point(210,100));
+		p.add(new Point(215,90));
+		p.add(new Point(220,100));
+		p.add(new Point(230,100));
+		p.add(new Point(207,107));
+		p.add(new Point(202,114));
+		p.add(new Point(215,110));
+		p.add(new Point(228,114));
+		p.add(new Point(223,107));
 		p.addAttributes(new SelectionAttributes());
 		p.addAttributes(new RotationAttributes(0));
 		p.addAttributes(new ResizeAttributes());
 		p.addAttributes(new ColorAttributes());
 		this.model.add(p);
-		SImage i = new SImage("rsc/img/java.jpg",new Point(0,0),150,100);
+		SImage i = new SImage("rsc/img/java.jpg",new Point(150,200),150,100);
 		i.addAttributes(new SelectionAttributes());
 		i.addAttributes(new ResizeAttributes());
 		i.addAttributes(new RotationAttributes());

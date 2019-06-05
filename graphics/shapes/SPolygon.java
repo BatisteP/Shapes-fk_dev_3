@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +33,7 @@ public class SPolygon extends Shape{
 	}
 	
 	public SPolygon(Polygon pl) {
-		this(pl, new TreeMap<String,Attributes>(), true);
+		this(pl, new HashMap<String,Attributes>(), true);
 	}
 	
 	public void add(Point p) {

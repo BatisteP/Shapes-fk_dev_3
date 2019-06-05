@@ -57,7 +57,7 @@ public class RHTopRight extends Handle {
 	}
 	
 
-	public void setLoc(Point p) {
+	/*public void setLoc(Point p) {
 		Point prev = this.shape.getLoc();
 		Point2D loc = (Point) p.clone();
 		RotationAttributes rot = (RotationAttributes)this.master.getAttributes(Attributes.RotationID);
@@ -68,7 +68,7 @@ public class RHTopRight extends Handle {
 			at.transform(loc, loc);
 		}
 		this.modifier((Point)loc);
-	}
+	}*/
 
 	@Override
 	public void setWidth(int width) {

@@ -77,6 +77,7 @@ public class TextFrame extends JFrame {
                 }
             }
         });
+        //makes the text area editable
         buttonEdit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                
@@ -90,7 +91,8 @@ public class TextFrame extends JFrame {
         });
          
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(320, 500);
+       setSize(320,600);
+        setLocation(900,0);
        
     }
      

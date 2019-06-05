@@ -57,7 +57,7 @@ public class RHTopLeft extends Handle {
 		this.shape.setLoc(loc);
 	}
 	
-	public void setLoc(Point p) {
+	/*public void setLoc(Point p) {
 		Point prev = this.shape.getLoc();
 		Point2D loc = (Point) p.clone();
 		RotationAttributes rot = (RotationAttributes)this.master.getAttributes(Attributes.RotationID);
@@ -69,7 +69,7 @@ public class RHTopLeft extends Handle {
 		}
 		this.modifier((Point)loc);
 	}
-
+*/
 	public void setWidth(int width) {
 		// TODO Auto-generated method stub
 		
